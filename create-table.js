@@ -1,9 +1,9 @@
-import sql from "./db.js";
+import { sql } from "./db.js";
 
  {
     await sql`
     CREATE TABLE incidentes (
-        id SERIAL PRIMARY KEY,
+        id varchar(255) PRIMARY KEY,
         titulo text NOT NULL,
         descricao text NOT NULL,
         status text NOT NULL,

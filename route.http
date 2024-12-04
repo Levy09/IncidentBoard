@@ -1,0 +1,27 @@
+POST http://localhost:3000/incidentes
+Content-Type: application/json
+
+
+{
+  "titulo": "Testede Incidente",
+  "descricao": "Descrição teste",
+  "status": "Pendente",
+  "rede": "Aldeota",
+  "data_criacao": "2023-07-13T17:47:20.000Z"
+}
+
+###
+GET http://localhost:3000/incidentes
+
+###
+PUT http://localhost:3000/incidentes/23d645f9-6044-44b5-9b0e-e9b3eb10d9a4
+Content-Type: application/json
+
+
+{
+  "titulo": "Testede Incidente",
+  "descricao": "Descrição teste",
+  "status": "pendente",
+  "rede": "Aldeota",
+  "data_criacao": "2023-07-13T17:47:20.000Z"
+}
