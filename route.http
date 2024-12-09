@@ -1,13 +1,10 @@
-POST http://localhost:3000/incidentes
+POST http://localhost:3003/
 Content-Type: application/json
 
 
 {
-  "titulo": "Testede Incidente",
-  "descricao": "Descrição teste",
-  "status": "Pendente",
-  "rede": "Aldeota",
-  "data_criacao": "2023-07-13T17:47:20.000Z"
+  "username": "levy.aragao",
+  "password": "levy@0902"
 }
 
 ###

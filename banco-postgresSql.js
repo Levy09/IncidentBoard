@@ -1,14 +1,21 @@
 import   sql  from "./db.js";
 
 export class Database {
+    async getuser(username, password) {
+        const result = await sql`SELECT * FROM users WHERE username = ${username} AND password = ${password}`;
+        return result.length ? result[0] : null;  // Retorna o primeiro usuário ou null
+    }
 
+    async createuser(username, password) {
+        return await sql`INSERT INTO users (username, password) VALUES (${username}, ${password})`;
+      }
 
 
     async list(search) {
         let incidentes;
     
         if (search) {
-            incidentes = await sql`SELECT * FROM incidentes WHERE titulo ILIKE ${'%' + search + '%'}`;
+            incidentes = await sql`SELECT * FROM incidentes WHERE rede ILIKE ${'%' + search + '%'}`;
         } else {
             incidentes = await sql`SELECT * FROM incidentes`;
         }

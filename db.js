@@ -1,10 +1,8 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
 
-
-import http from "http";
 import { neon } from "@neondatabase/serverless";
 
- const sql = neon(process.env.DATABASE_URL);
+const sql = neon(process.env.DATABASE_URL);
 
- export default sql;
+export default sql;

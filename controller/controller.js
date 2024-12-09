@@ -2,6 +2,9 @@ import { Database } from "../banco-postgresSql.js";
 import {randomUUID} from "crypto";
 
 const database = new Database();
+
+
+
 export async function CreateIncident(req, res) {
 
     const incidentId = randomUUID();
@@ -37,5 +40,7 @@ export async function Updateincident(req, res) {
 }   
 
 export async function Deleteincident(req, res) {
-    res.send("Deleteincident");
+    const incidenteid = req.params.id;
+    await database.delete(incidenteid);
+    res.send("Deleteincident");     
 }
